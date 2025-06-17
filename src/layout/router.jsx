@@ -14,6 +14,7 @@ import MyTutor from "../page/MyTutor";
 import TutorDetails from "../page/TutorDetails";
 import axios from "axios";
 import Myboked from "../page/Myboked";
+import EditMyTutor from "../page/EditMyTutor";
    
 
 
@@ -64,6 +65,11 @@ export const router = createBrowserRouter([
           path:'tutordetails/:id',
          loader:({params})=>axios(`${import.meta.env.VITE_API_URL}/tutor/${params.id}`),
           element:<PrivetRouter><TutorDetails></TutorDetails></PrivetRouter>
+        },
+        {
+          path:'editmytutor/:id',
+         loader:({params})=>axios(`${import.meta.env.VITE_API_URL}/tutor/${params.id}`),
+          element:<PrivetRouter><EditMyTutor></EditMyTutor></PrivetRouter>
         },
          
 

@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import axios from 'axios';
+import BokedCart from './BokedCart';
 
 function Myboked() {
     const {user}=use(AuthContext)
@@ -19,9 +20,7 @@ function Myboked() {
   return (
     <div>
         {
-            boked.map(bok =><>
-            <p>{bok._id}</p>
-            </>)
+            boked.map(bok => <BokedCart bok={bok} key={bok._id}></BokedCart>)
         }
     </div>
   )

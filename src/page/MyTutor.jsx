@@ -9,38 +9,50 @@ function MyTutor() {
   console.log(data)
 
   return (
-    <div className="p-5">
-      <h2 className="text-2xl font-bold mb-4">my Tutors</h2>
-
-      {
-        data.map(tutor => (
-          <div
-            key={tutor._id}
-            className="flex flex-col md:flex-row items-start gap-4 border rounded-xl p-4 bg-gray-300 my-5 shadow-md"
-          >
-            <img
-              src={tutor.image}
-              alt="Tutor"
-              className="w-32 h-32 rounded-lg object-cover"
-            />
-
-            <div className="flex-1 space-y-2">
-              <p className="text-sm text-gray-700">
-                <span className="font-semibold">Language:</span> {tutor.language}
-              </p>
-              <p className="text-sm text-gray-700">
-                <span className="font-semibold">Price:</span> ${tutor.price}
-              </p>
-              <p className="text-sm text-gray-600">{tutor.description}</p>
-
-              <Link to={`/tutordetails/${tutor._id}`}>
-                <button className="btn btn-sm btn-primary mt-2">Details</button>
-              </Link>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+    <div className="overflow-x-auto px-4 py-6">
+    <table className="table-auto w-full border border-gray-300 rounded-lg shadow-md">
+      <thead className="bg-gray-200 text-gray-700">
+        <tr>
+          <th className="px-4 py-2 border">Image</th>
+          <th className="px-4 py-2 border">Language</th>
+          <th className="px-4 py-2 border">Price</th>
+          <th className="px-4 py-2 border">Description</th>
+          <th className="px-4 py-2 border">Review</th>
+          <th className="px-4 py-2 border">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((tutor) => (
+          <tr key={tutor._id} className="text-center hover:bg-gray-550 transition">
+            <td className="px-4 py-2 border">
+              <img src={tutor.image} alt="Tutor" className="h-16 w-16 object-cover rounded" />
+            </td>
+            <td className="px-4 py-2 border">{tutor.language}</td>
+            <td className="px-4 py-2 border text-orange-500 font-semibold">${tutor.price}</td>
+            <td className="px-4 py-2 border">{tutor.description}</td>
+            <td className="px-4 py-2 border text-yellow-500 font-medium">
+              {tutor.likedBy?.length || 0} ★
+            </td>
+            <td className="px-4 py-2 border flex gap-2 justify-center">
+            <Link to={`/editmytutor/${tutor._id}`}>
+            <button
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+              >
+                Update
+              </button>
+            </Link>
+              {/* <button
+                onClick={() => handleDelete(tutor._id)}
+                className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+              >
+                Delete
+              </button> */}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
   );
 }
 
