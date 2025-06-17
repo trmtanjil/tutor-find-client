@@ -9,7 +9,7 @@ const datas = useLoaderData();
   const [data, setdata]= useState (datas?.data || [])
   console.log(setdata);
   console.log(data)
-  const {_id, image, description, language, price } = data;
+  const {_id, image, description, language, price,likedBy } = data;
   
 
 
@@ -39,6 +39,9 @@ const datas = useLoaderData();
       <div className="flex-1 space-y-2">
         <p className="text-sm text-gray-700">
           <span className="font-semibold">Language:</span> {language}
+        </p>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold">Review : </span> {likedBy?.length}
         </p>
         <p className="text-sm text-gray-700">
           <span className="font-semibold">Price:</span> ${price}

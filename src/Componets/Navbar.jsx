@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 import { use } from 'react'
+import ThemeToggle from '../page/ThemeToggle'
 
 
 function Navbar() {
@@ -60,7 +61,8 @@ function Navbar() {
   </div>
   <div className="navbar-end">
           {/* <ThemeToggle></ThemeToggle> */}
-
+    <ThemeToggle></ThemeToggle>
+    
       {/* userNevbar photo  */}
          <div className='pr-3  flex items-center '>
       {user && <>
