@@ -5,7 +5,6 @@ import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 function MyTutor() {
-  const [listUser, setLisUser] =useState([])
 
   const datas = useLoaderData(); 
   const [data, setdata]= useState(datas?.data || [])

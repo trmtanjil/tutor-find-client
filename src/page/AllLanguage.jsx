@@ -1,7 +1,12 @@
 import { ArrowRight, Book, Landmark, Globe, School, Library, Languages, BookOpen, BookText, GraduationCap } from "lucide-react";
 import { useNavigate } from "react-router";
-
+import TutorCount from "./TutorCount";
+import { use } from "react";
+import { AuthContext } from "../context/AuthContext";
+ 
 const AllLanguage = () => {
+  const {user} =use(AuthContext)
+  console.log(user?.length);
   const navigate = useNavigate();
 
    const languages = [
@@ -57,7 +62,16 @@ const AllLanguage = () => {
 
 
   return (
+   <>
+ <div className="flex gap-6 justify-center">
+ <TutorCount ></TutorCount>
+ <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
+<p className="text-blue-600 text-3xl font-bold">  {languages.length}</p>
+ </div>
+ 
+ </div>
     <div className="max-w-6xl mx-auto p-6">
+      
       <h2 className="text-3xl font-bold mb-6 text-center">Language Categories</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {languages.map((lang, idx) => (
@@ -80,6 +94,7 @@ const AllLanguage = () => {
         ))}
       </div>
     </div>
+   </>
   );
 };
 
