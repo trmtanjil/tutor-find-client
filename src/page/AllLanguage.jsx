@@ -63,7 +63,7 @@ const AllLanguage = () => {
 
   return (
    <>
- <div className="flex gap-6 justify-center">
+ <div className="flex gap-6 justify-center my-5">
  <TutorCount ></TutorCount>
  <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
 <p className="text-blue-600 text-3xl font-bold">  {languages.length}</p>
