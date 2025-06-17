@@ -1,13 +1,65 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router'; 
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
 
 function MyTutor() {
+  const [listUser, setLisUser] =useState([])
+
   const datas = useLoaderData(); 
   const [data, setdata]= useState(datas?.data || [])
   console.log(setdata);
   console.log(data)
 
+  const handledelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't Delete Your Product!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`${import.meta.env.VITE_API_URL}/tutor/${id}`, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.data.deletedCount > 0) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your Product Deleted Successfully",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+            // optionally update UI here, e.g. remove deleted item from state
+            const remainingdata = data.filter((item) => item._id !== id);
+            setdata(remainingdata);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong while deleting!'
+          });
+        });
+   
+      }
+    });
+  };
+  
   return (
     <div className="overflow-x-auto px-4 py-6">
     <table className="table-auto w-full border border-gray-300 rounded-lg shadow-md">
@@ -41,12 +93,12 @@ function MyTutor() {
                 Update
               </button>
             </Link>
-              {/* <button
-                onClick={() => handleDelete(tutor._id)}
+              <button
+                onClick={() => handledelete(tutor._id)}
                 className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
               >
                 Delete
-              </button> */}
+              </button>
             </td>
           </tr>
         ))}
