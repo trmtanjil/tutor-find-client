@@ -3,9 +3,45 @@ import { AuthContext } from '../context/AuthContext'
 import { use } from 'react'
 import ThemeToggle from '../page/ThemeToggle'
 
+import { useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 function Navbar() {
   const {user,logOutUser}=use(AuthContext)
+
+
+
+
+  
+  const auth = getAuth();
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // ✅ Login success, send email to server
+        fetch("http://localhost:5000/loggedInUsers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("User sent to DB:", data);
+          });
+      }
+    });
+  }, [auth]);
+  
+
+
+
+
   return (
     <div>
  
@@ -62,7 +98,7 @@ function Navbar() {
   <div className="navbar-end">
           {/* <ThemeToggle></ThemeToggle> */}
     <ThemeToggle></ThemeToggle>
-    
+
       {/* userNevbar photo  */}
          <div className='pr-3  flex items-center '>
       {user && <>

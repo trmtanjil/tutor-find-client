@@ -3,10 +3,11 @@ import { useNavigate } from "react-router";
 import TutorCount from "./TutorCount";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
+import CountLogin from "./CountLogin";
  
 const AllLanguage = () => {
   const {user} =use(AuthContext)
-  console.log(user?.length);
+  console.log(user);
   const navigate = useNavigate();
 
    const languages = [
@@ -68,6 +69,7 @@ const AllLanguage = () => {
  <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
 <p className="text-blue-600 text-3xl font-bold">  {languages.length}</p>
  </div>
+ <CountLogin></CountLogin>
  
  </div>
     <div className="max-w-6xl mx-auto p-6">
