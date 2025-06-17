@@ -10,6 +10,8 @@ function FindTutors() {
     let url = `${import.meta.env.VITE_API_URL}/tutor`;
     if (language) {
       url = `${import.meta.env.VITE_API_URL}/tutor/bylanguage?language=${language}&search=${search}`;
+    }else if (search) {
+      url = `${import.meta.env.VITE_API_URL}/tutor?search=${search}`;
     }
   
     fetch(url)
