@@ -1,22 +1,31 @@
-import React, { use, useEffect, useState } from 'react'
-import { AuthContext } from '../context/AuthContext'
+ 
+
+ import { AuthContext } from '../context/AuthContext'
 import axios from 'axios';
 import BokedCart from './BokedCart';
+import { use, useEffect, useState } from 'react';
 
 function Myboked() {
     const {user}=use(AuthContext)
     const [boked, setboked]= useState([]);
+    console.log(user.accessToken);
 
-    useEffect(()=>{
-        axios(`${import.meta.env.VITE_API_URL}/my-boked/${user?.email}`)
-        .then(data=>{
-            console.log(data?.data)
-            setboked(data?.data)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    },[user])
+    useEffect(() => {
+        if (user?.email && user?.accessToken) {
+          axios(`${import.meta.env.VITE_API_URL}/my-boked/${user.email}`, {
+            headers: {
+              authorization: `Bearer ${user.accessToken}`,
+            },
+          })
+            .then((res) => {
+              console.log(res.data);
+              setboked(res.data);
+            })
+            .catch((err) => {
+              console.log('Unauthorized or Token Error:', err);
+            });
+        }
+      }, [user]);
   return (
     <div>
         {

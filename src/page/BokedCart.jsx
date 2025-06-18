@@ -10,8 +10,8 @@ function BokedCart({bok}) {
     const {image,language,likedBy,price,username,email,_id} = bok;
     console.log(bok)
 
-  const [liked, setLiked]  =useState(likedBy.includes(user?.email))
-  const [likcount, setlikcount] = useState(likedBy.length)
+  const [liked, setLiked]  =useState(likedBy?.includes(user?.email))
+  const [likcount, setlikcount] = useState(likedBy?.length)
       console.log(liked);
 
 

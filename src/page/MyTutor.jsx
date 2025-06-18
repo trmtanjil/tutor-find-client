@@ -8,8 +8,6 @@ function MyTutor() {
 
   const datas = useLoaderData(); 
   const [data, setdata]= useState(datas?.data || [])
-  console.log(setdata);
-  console.log(data)
 
   const handledelete = (id) => {
     Swal.fire({

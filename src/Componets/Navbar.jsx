@@ -18,7 +18,7 @@ function Navbar() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // ✅ Login success, send email to server
+      
         fetch("http://localhost:5000/loggedInUsers", {
           method: "POST",
           headers: {

@@ -10,9 +10,9 @@ useEffect(() => {
 }, []);
 
 return (
-  <div className='bg-amber-500'>
+  <div className='text-center p-4 bg-blue-100 rounded-xl shadow-lg'>
     <h1 className='font-bold text-blue-500 text-3xl text-center'> {loginCount}</h1>
-    <h2>Total Logged In Users:</h2>
+    <h2 className='text-blue-500'>Total Logged In Users:</h2>
   </div>
 );
  
