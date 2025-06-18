@@ -112,7 +112,7 @@ const handlegogle=()=>{
 
   return (
     <div>
-        <Helmet>  <title>Register</title></Helmet>
+        
           <div className="card  w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-12 bg-gray-300">
     <div className="card-body">
     <h1 className="text-5xl text-black text-center font-bold">Register now!</h1>
