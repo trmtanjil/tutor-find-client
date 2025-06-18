@@ -4,7 +4,7 @@ import TutorCount from "./TutorCount";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
 import CountLogin from "./CountLogin";
- 
+  
 const AllLanguage = () => {
   const {user} =use(AuthContext)
   console.log(user);
@@ -64,13 +64,21 @@ const AllLanguage = () => {
 
   return (
    <>
- <div className="flex gap-6 justify-center my-5">
+  
+ <div className="grid grid-cols-1 md:grid-cols-4 gap-4 justify-center my-5 max-w-5xl mx-auto">
  <TutorCount ></TutorCount>
  <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
 <p className="text-blue-600 text-3xl font-bold">  {languages.length}</p>
+<p className="text-blue-600 text-3xl font-bold"> Language</p>
  </div>
  <CountLogin></CountLogin>
  
+ <div>
+ <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
+      <h2 className="text-3xl font-bold text-blue-700">120 + </h2>
+      <p className="text-blue-600 text-3xl font-bold">Total Review</p>
+    </div>
+ </div>
  </div>
     <div className="max-w-6xl mx-auto p-6">
       

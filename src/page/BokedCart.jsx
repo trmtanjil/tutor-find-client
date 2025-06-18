@@ -38,6 +38,7 @@ const handleliked = () => {
 
   return (
     <div>
+       
          <div className="flex flex-col md:flex-row items-center gap-5 border rounded-md p-4 shadow-md max-w-3xl mx-auto my-6">
       {/* Image */}
       <div className="w-full md:w-1/3">

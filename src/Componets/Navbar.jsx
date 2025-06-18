@@ -19,7 +19,7 @@ function Navbar() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
       
-        fetch("http://localhost:5000/loggedInUsers", {
+        fetch(`${import.meta.env.VITE_API_URL}/loggedInUsers`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Navbar() {
 
 
       <span className='md:text-4xl text-xl font-bold '>Tutor</span>
-    <img className='md:h-[40px] md:w-[40px] h-[20px] w-[20px] rounded-full  ' src="https://i.ibb.co/21b9N5V9/Chat-GPT-Image-May-23-2025-06-27-21-PM.png" alt="" />
+    <img className='md:h-[40px] md:w-[40px] h-[20px] w-[20px] rounded-full  ' src="https://i.ibb.co/pvbBFDjN/download.jpg" alt="" />
          <span className='md:text-4xl text-xl font-bold'>Hub</span>
 
         </div>

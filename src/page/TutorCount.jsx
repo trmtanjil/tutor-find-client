@@ -6,7 +6,7 @@ function TutorCount() {
   useEffect(() => {
     const fetchTutorCount = async () => {
       try {
-        const res = await fetch('http://localhost:5000/tutor/count');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/tutor/count`);
         const data = await res.json();
         setTutorCount(data.count);
       } catch (error) {
@@ -20,7 +20,7 @@ function TutorCount() {
   return (
     <div className="text-center p-4 bg-blue-100 rounded-xl shadow-lg">
       <h2 className="text-3xl font-bold text-blue-700">{tutorCount}</h2>
-      <p className="text-gray-600 mt-2">Total Tutors</p>
+      <p className="text-blue-600 text-3xl font-bold">Total Tutors</p>
     </div>
   );
 }

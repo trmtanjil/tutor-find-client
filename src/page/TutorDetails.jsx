@@ -30,6 +30,7 @@ const datas = useLoaderData();
 
   return (
      <div className="flex flex-col md:flex-row items-start gap-4 border rounded-xl p-4 bg-gray-100 my-5 shadow-md">
+      
       <img
         src={image}
         alt="Tutor"

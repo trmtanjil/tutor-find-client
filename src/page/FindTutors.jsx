@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router';
 
 function FindTutors() {
@@ -22,6 +23,7 @@ function FindTutors() {
 
   return (
     <div className="p-5">
+         <Helmet>  <title>All Language</title></Helmet>
     <input // 🔹 Step 2
   type="text"
   placeholder="🔍 Search tutor by name, price, or description"

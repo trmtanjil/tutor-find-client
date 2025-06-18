@@ -15,6 +15,7 @@ import TutorDetails from "../page/TutorDetails";
 import axios from "axios";
 import Myboked from "../page/Myboked";
 import EditMyTutor from "../page/EditMyTutor";
+import Error from "../page/Error";
    
 
 
@@ -78,5 +79,9 @@ export const router = createBrowserRouter([
      
     ]
   },
+  {
+    path:'/*',
+    element:<Error></Error>
+  }
 
 ]);

@@ -4,6 +4,7 @@
 import axios from 'axios';
 import BokedCart from './BokedCart';
 import { use, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 function Myboked() {
     const {user}=use(AuthContext)
@@ -28,6 +29,7 @@ function Myboked() {
       }, [user]);
   return (
     <div>
+         <Helmet>  <title>MyBoking</title></Helmet>
         {
             boked.map(bok => <BokedCart bok={bok} key={bok._id}></BokedCart>)
         }

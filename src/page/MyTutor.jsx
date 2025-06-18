@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router'; 
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
@@ -59,6 +60,7 @@ function MyTutor() {
   
   return (
     <div className="overflow-x-auto px-4 py-6">
+        <Helmet>  <title>MyTutor</title></Helmet>
     <table className="table-auto w-full border border-gray-300 rounded-lg shadow-md">
       <thead className="bg-gray-200 text-gray-700">
         <tr>

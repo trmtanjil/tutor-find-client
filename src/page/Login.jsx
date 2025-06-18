@@ -4,6 +4,7 @@ import { AuthContext } from '../context/AuthContext'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Link, useLocation, useNavigate } from 'react-router'
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet'
 
 function Login() {
  const navigate = useNavigate()
@@ -96,6 +97,7 @@ function Login() {
 
   return (
     <div>
+        <Helmet>  <title>Login</title></Helmet>
       <div>
                 <div className="card  w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-12 bg-gray-300">
           <div className="card-body">

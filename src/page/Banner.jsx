@@ -3,7 +3,7 @@ import React from 'react'
 function Banner() {
   return (
     <div>
-         <section className="  py-16 px-4 md:px-10">
+         <section className=" bg-gray-600 py-16 px-4 md:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         {/* Text Section */}
         <div className="text-center md:text-left">
