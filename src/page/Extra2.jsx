@@ -33,7 +33,7 @@ function Extra2() {
 
   {/* text */}
   <div className="w-full md:w-1/2 p-4 mt-6">
-     <h1 className='text-3xl font-bold mx-auto text-center'>
+     <h1 className='text-2xl font-bold mx-auto text-center'>
     Looking for interesting tuition jobs to excel your teaching experience?
      </h1>
      <p className='text-center'>
