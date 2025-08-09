@@ -68,13 +68,25 @@ function Navbar() {
           <NavLink   to="/findtutors" className="hover:text-blue-500 font-bold text-xl">Find tutors
 </NavLink>
          </li>
-         <li> <NavLink   to="/mylisting" className="hover:text-blue-500 font-bold text-xl">Add Tutorials</NavLink></li>
-         <li>
-          <NavLink   to={`/mytutor/${user?.email}`} className="hover:text-blue-500 font-bold text-xl">My Tutorials</NavLink>
-         </li>
-         <li>
-          <NavLink   to='/myboked' className="hover:text-blue-500 font-bold text-xl">My booked tutors</NavLink>
-         </li>
+       {user && (
+  <>
+    <li>
+      <NavLink to="/mylisting" className="hover:text-blue-500 font-bold text-xl">
+        Add Tutorials
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to={`/mytutor/${user?.email}`} className="hover:text-blue-500 font-bold text-xl">
+        My Tutorials
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to="/myboked" className="hover:text-blue-500 font-bold text-xl">
+        My booked tutors
+      </NavLink>
+    </li>
+  </>
+)} 
         
       </ul>
     </div>
@@ -88,9 +100,13 @@ function Navbar() {
          <NavLink    to="/" className="hover:text-blue-500  font-bold text-xl">Home</NavLink>
           <NavLink   to="/findtutors" className="hover:text-blue-500 font-bold text-xl">Find tutors
 </NavLink>
-          <NavLink   to="/mylisting" className="hover:text-blue-500 font-bold text-xl">Add Tutorials</NavLink>
+        {
+          user && (<>
+            <NavLink   to="/mylisting" className="hover:text-blue-500 font-bold text-xl">Add Tutorials</NavLink>
           <NavLink  to={`/mytutor/${user?.email}`} className="hover:text-blue-500 font-bold text-xl">My Tutorials</NavLink>
            <NavLink   to='/myboked' className="hover:text-blue-500 font-bold text-xl">My booked tutors</NavLink>
+          </>)
+        }
         </div>
       
     </ul>
