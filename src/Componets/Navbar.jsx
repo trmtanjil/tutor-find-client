@@ -1,13 +1,14 @@
 import { Link, NavLink } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
-import { use } from 'react'
+import { use, useState } from 'react'
 import ThemeToggle from '../page/ThemeToggle'
 
 import { useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
+ 
 function Navbar() {
   const {user,logOutUser}=use(AuthContext)
+  const [isScrolled, setIsScrolled] = useState(false);
 
 
 
@@ -39,16 +40,33 @@ function Navbar() {
   }, [auth]);
   
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
 
 
   return (
-    <div>
+  <header className='sticky  top-0 z-5000 shadow-md  '>
+      <section   className={`sticky top-0 z-50 shadow-md w-full transition-all duration-300 ${
+        isScrolled ? 'bg-none' : ''
+      }`}
+      style={!isScrolled ? {
+        background: 'linear-gradient(90deg, rgb(84, 6, 84), rgb(204, 13, 133) 50%, rgb(84, 6, 84) 100%)'
+      } : {}}>
  
-    <div  className="navbar z-10 shadow-sm px-4 sm:px-6 lg:px-8   mx-auto sticky top-0"
-        style={{
-          background: 'linear-gradient(90deg, rgb(84, 6, 84), rgb(204, 13, 133) 50%, rgb(84, 6, 84) 100%, rgb(0, 212, 255) 0px)'
-        }}
+    <div  className="navbar z-10 shadow-sm px-4    mx-auto  "
+        
       >     
   <div className="navbar-start">
         <div className='flex justify-center items-center'>
@@ -117,7 +135,7 @@ function Navbar() {
   </div>
   <div className="navbar-end">
           {/* <ThemeToggle></ThemeToggle> */}
-    <ThemeToggle></ThemeToggle>
+    <ThemeToggle ></ThemeToggle>
 
       {/* userNevbar photo  */}
          <div className='pr-3  flex items-center '>
@@ -155,7 +173,8 @@ function Navbar() {
         </div>
   </div>
 </div>
-    </div>
+    </section>
+  </header>
   )
 }
 

@@ -16,9 +16,9 @@ export default function ThemeToggle() {
   };
 
   return (
-    <div className=" mx-4 flex flex-col items-center justify-center bg-base-100 text-base-content transition-colors duration-500">
+    <div className=" rounded-full mx-4 flex flex-col items-center justify-center bg-base-100 text-base-content transition-colors duration-500">
 
-      <button className="btn  " onClick={toggleTheme}>
+      <button className="btn  rounded-full" onClick={toggleTheme}>
       {theme === "light" ?  <MdDarkMode /> : <IoSunny></IoSunny>}  
       </button>
 

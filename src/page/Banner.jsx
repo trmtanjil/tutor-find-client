@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 function Banner() {
   return (
-    <div  >
-         <section  className="py-16 px-4 md:px-10 bg-cover bg-no-repeat bg-bottom"
+    <div>
+         <section  className="py-16   md:px-10 bg-cover bg-no-repeat bg-bottom "
   style={{
     backgroundImage: "url('https://i.ibb.co/27JcnRbB/banner-bg-59ddabf7.png')",
   }}
@@ -13,7 +13,7 @@ function Banner() {
         {/* Text Section */}
         <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-500 leading-tight mb-6">
-            <span className='text-purple-700'>THE MOST</span><span className='text-blue-500'> EFFICIENT WAY  TO LEARN</span><span className='text-purple-700'><br /> A LANGUAGE</span>
+            <span className='text-purple-700'>THE MOST</span><span className='text-blue-500'> EFFICIENT WAY  TO LEARN</span><span className='text-purple-500'><br /> A LANGUAGE</span>
           </h1>
            
           <button className="bg-blue-600 hover:bg-blue-700 transition duration-300 text-white font-semibold px-8 py-3 rounded-xl shadow-md">
