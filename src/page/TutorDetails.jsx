@@ -2,6 +2,7 @@ import React, { use, useState } from 'react'
 import { Link, useLoaderData } from 'react-router'
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
+import Swal from 'sweetalert2';
  
 function TutorDetails() {
     const {user}= use(AuthContext)
@@ -13,19 +14,35 @@ const datas = useLoaderData();
   
 
 
-  const handleboked =()=>{
-   
-        const bokedInfo ={
-            tutorId:_id,
-            customarEmail:user?.email,
-        }
-        //sseve boked info 
-        axios.post(`${import.meta.env.VITE_API_URL}/place-boked/${_id}`,bokedInfo)
-        .then(data=>{
-            console.log(data)
-        })
+const handleboked = () => {
+  const bokedInfo = {
+    tutorId: _id,
+    customarEmail: user?.email,
+  };
+  
+  axios.post(`${import.meta.env.VITE_API_URL}/place-boked/${_id}`, bokedInfo)
+    .then(response => {
+      console.log(response);
 
-  }
+      Swal.fire({
+        icon: 'success',
+        title: 'Booking Successful',
+        text: 'Your tutor booking has been placed successfully!',
+        confirmButtonText: 'OK'
+      });
+    })
+    .catch(error => {
+      console.error(error);
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Booking Failed',
+        text: 'Something went wrong. Please try again later.',
+        confirmButtonText: 'OK'
+      });
+    });
+};
+
 
 
   return (
