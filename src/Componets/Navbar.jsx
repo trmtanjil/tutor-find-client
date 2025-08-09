@@ -93,7 +93,7 @@ function Navbar() {
        {user && (
   <>
     <li>
-      <NavLink to="/mylisting" className="hover:text-blue-500 font-bold text-xl">
+      <NavLink to="/mylisting"  className="hover:text-blue-500 font-bold text-xl ">
         Add Tutorials
       </NavLink>
     </li>
