@@ -3,7 +3,7 @@ import { IoSunny } from "react-icons/io5";
 import { MdDarkMode } from "react-icons/md";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   // Theme change handle korbe
   useEffect(() => {

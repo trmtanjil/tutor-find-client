@@ -45,7 +45,11 @@ function Navbar() {
   return (
     <div>
  
-    <div className="navbar z-10 bg-base-100 shadow-sm px max-w-6xl mx-auto sticky to-0%">     
+    <div  className="navbar z-10 shadow-sm px-4 sm:px-6 lg:px-8   mx-auto sticky top-0"
+        style={{
+          background: 'linear-gradient(90deg, rgb(84, 6, 84), rgb(204, 13, 133) 50%, rgb(84, 6, 84) 100%, rgb(0, 212, 255) 0px)'
+        }}
+      >     
   <div className="navbar-start">
         <div className='flex justify-center items-center'>
 
