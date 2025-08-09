@@ -2,7 +2,7 @@ import React, { use, useState } from 'react'
 import { Link, useLoaderData } from 'react-router'
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
-
+ 
 function TutorDetails() {
     const {user}= use(AuthContext)
 const datas = useLoaderData(); 
@@ -29,15 +29,18 @@ const datas = useLoaderData();
 
 
   return (
-     <div className="flex flex-col md:flex-row items-start gap-4 border rounded-xl p-4 bg-gray-100 my-5 shadow-md">
+ <div className='w-2xl mx-auto'>
+      <div className="flex   flex-col md:flex-row items-start gap-4 border rounded-xl p-4  my-5 shadow-md">
       
       <img
         src={image}
         alt="Tutor"
         className="w-32 h-32 rounded-lg object-cover"
       />
+      
 
-      <div className="flex-1 space-y-2">
+      <div className="flex-1 space-y-2 mx-auto">
+        
         <p className="text-sm text-gray-700">
           <span className="font-semibold">Language:</span> {language}
         </p>
@@ -49,11 +52,38 @@ const datas = useLoaderData();
         </p>
         <p className="text-sm text-gray-600">{description}</p>
 
-        
-          <button onClick={handleboked} className="btn btn-sm btn-primary mt-2">Book now</button>
+         
+                              <button
+                               onClick={handleboked}
+                              className="
+              mt-2
+     relative overflow-hidden group 
+  bg-[linear-gradient(90deg,rgb(84,6,84),rgb(204,13,133)_50%,rgb(84,6,84))]
+  hover:bg-[linear-gradient(90deg,rgb(100,8,100),rgb(224,33,153)_50%,rgb(100,8,100))]
+  text-white font-bold px-8 py-4 rounded-lg shadow-2xl 
+  transition-all duration-500 border-2 border-pink-400 hover:border-pink-300">
+  
+  {/* Animated tech pulse effect */}
+  <div className="absolute top-0 left-0 w-full h-0.5 
+    bg-[conic-gradient(at_right,_#00f7ff,_#89f)] 
+    opacity-70 group-hover:h-1 transition-all duration-300"></div>
+  
+  {/* Glowing dot animation */}
+  <div className="absolute -left-2 top-1/2 w-3 h-3 bg-cyan-400 rounded-full 
+    group-hover:left-[calc(100%-10px)] transition-all duration-700 delay-100 
+    opacity-0 group-hover:opacity-100 shadow-[0_0_8px_2px_rgba(0,247,255,0.8)]"></div>
+  
+  <span className="relative z-10 flex items-center gap-3 tracking-wider">
+    <span className="text-cyan-300 font-mono"></span> 
+   Book now
+    <span className="text-xl ml-2 animate-pulse group-hover:animate-none 
+      group-hover:translate-x-1 transition-transform">→</span>
+  </span>
+</button>
    
       </div>
     </div>
+ </div>
   )
 }
 
