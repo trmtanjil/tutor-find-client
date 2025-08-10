@@ -16,6 +16,7 @@ import axios from "axios";
 import Myboked from "../page/Myboked";
 import EditMyTutor from "../page/EditMyTutor";
 import Error from "../page/Error";
+import ContentNotAvailable from "../page/ContentNotAvailable";
    
 
 
@@ -46,6 +47,11 @@ export const router = createBrowserRouter([
          {
             path:'myboked',
             element:<PrivetRouter><Myboked></Myboked></PrivetRouter>,
+            
+        },
+          {
+            path:'containnotavailabl',
+            element: <ContentNotAvailable></ContentNotAvailable> ,
             
         },
            {
