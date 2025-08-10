@@ -1,4 +1,4 @@
-import { div } from 'framer-motion/client';
+ 
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router';
@@ -30,13 +30,13 @@ return (
     <input
       type="text"
       placeholder="🔍 Search tutor by name, price, or description"
-      className="w-full max-w-md px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all duration-300 mb-5"
+      className="w-full max-w-md px-5 py-3 mx-auto  flex justify-center items-center rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all duration-300 mb-5"
       onChange={(e) => setSearch(e.target.value)}
     />
     <h2 className="text-2xl font-bold mb-4 capitalize">Tutors for "{language}"</h2>
 
     {/* Grid container for all tutors */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
       {alltutor.map((tutor) => (
      <div
   key={tutor._id}
@@ -49,7 +49,7 @@ return (
   />
 
   {/* Content with space between */}
-  <div className="flex flex-col flex-grow justify-between mt-4">
+  <div className="flex flex-col flex-grow justify-between mt-4 mx-auto">
     <div className="space-y-2">
       <h2 className="text-xl font-bold  ">{tutor.username}</h2>
       <h2 className="text-lg font-semibold  ">
@@ -61,7 +61,7 @@ return (
       <p className="text-sm  ">
         <span className="font-medium">Language:</span> {tutor.language}
       </p>
-      <p className="text-sm  ">{tutor.description}</p>
+      <p className="text-sm  "><span className='font-medium'>Description :</span> {tutor.description}</p>
     </div>
 
     {/* Bottom aligned button */}

@@ -28,7 +28,7 @@ function Myboked() {
         }
       }, [user]);
   return (
-    <div>
+    <div className='min-h-[80vh]'>
          <Helmet>  <title>MyBoking</title></Helmet>
         {
             boked.map(bok => <BokedCart bok={bok} key={bok._id}></BokedCart>)
