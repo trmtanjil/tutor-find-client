@@ -27,7 +27,7 @@ function Extra2() {
       transition={{ duration: 3, repeat: Infinity }}
       src="https://i.ibb.co.com/hxGnJYDx/image3.png"
       alt="Language Learning App"
-      className="max-w-[450px] h-[400px] rounded-xl mb-5"
+      className="max-w-[80%] h-[80%] rounded-xl mb-5"
     />
   </div>
 

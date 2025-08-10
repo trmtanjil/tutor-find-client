@@ -58,16 +58,16 @@ const handleboked = () => {
 
       <div className="flex-1 space-y-2 mx-auto">
         
-        <p className="text-sm text-gray-700">
+        <p className="text-sm ">
           <span className="font-semibold">Language:</span> {language}
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm ">
           <span className="font-semibold">Review : </span> {likedBy?.length}
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm ">
           <span className="font-semibold">Price:</span> ${price}
         </p>
-        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-sm  ">{description}</p>
 
          
                               <button

@@ -40,9 +40,9 @@ navigate('/')
 
 
    return (
-     <div>
+     <div className='min-h-[80vh]'>
         {/* <Helmet>  <title>Add tutor </title></Helmet> */}
-            <div className="text-white  mx-auto p-4 bg-gray-600 shadow rounded-xl m-4 px-[5%]">
+            <div className="text-white  mx-auto p-4 bg-gray-600 shadow rounded-xl m-4 px-[5%] ">
       <h2 className="text-2xl font-bold mb-4">Add New Tutorial</h2>
       <form onSubmit={handleAddProduct}>
        <div className="space-y-4 grid md:grid-cols-2 gap-4" >

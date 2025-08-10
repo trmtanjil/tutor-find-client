@@ -23,7 +23,7 @@ function FindTutors() {
   
 
 return (
-  <div className="p-5">
+  <div className="p-5 min-h-[80vh]">
     <Helmet>
       <title>All Language</title>
     </Helmet>
@@ -40,7 +40,7 @@ return (
       {alltutor.map((tutor) => (
      <div
   key={tutor._id}
-  className="flex flex-col border rounded-xl p-4 bg-gray-300 shadow-md"
+  className="flex flex-col border rounded-xl p-4   shadow-md"
 >
   <img
     src={tutor.image}
@@ -51,17 +51,17 @@ return (
   {/* Content with space between */}
   <div className="flex flex-col flex-grow justify-between mt-4">
     <div className="space-y-2">
-      <h2 className="text-xl font-bold text-gray-800">{tutor.username}</h2>
-      <h2 className="text-lg font-semibold text-gray-700">
+      <h2 className="text-xl font-bold  ">{tutor.username}</h2>
+      <h2 className="text-lg font-semibold  ">
         Review Count: {tutor.likedBy ? tutor.likedBy.length : 0}
       </h2>
-      <h2 className="text-lg font-semibold text-gray-700">
+      <h2 className="text-lg font-semibold  ">
         Price: ${tutor.price}
       </h2>
-      <p className="text-sm text-gray-600">
+      <p className="text-sm  ">
         <span className="font-medium">Language:</span> {tutor.language}
       </p>
-      <p className="text-sm text-gray-700">{tutor.description}</p>
+      <p className="text-sm  ">{tutor.description}</p>
     </div>
 
     {/* Bottom aligned button */}

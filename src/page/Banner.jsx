@@ -9,9 +9,9 @@ function Banner() {
     backgroundImage: "url('https://i.ibb.co/27JcnRbB/banner-bg-59ddabf7.png')",
   }}
          >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <div className="max-w-7xl   mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         {/* Text Section */}
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left ml-8">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-500 leading-tight mb-6">
             <span className='text-purple-700'>THE MOST</span><span className='text-blue-500'> EFFICIENT WAY  TO LEARN</span><span className='text-purple-500'><br /> A LANGUAGE</span>
           </h1>
@@ -45,13 +45,13 @@ function Banner() {
         </div>
 
         {/* Image Section */}
-        <div className="flex justify-center md:justify-end ">
+        <div className="flex justify-center  pr-4 md:justify-end  ">
           <motion.img
           animate={{y:[0,50,0]}}
           transition={{duration: 3, repeat: Infinity}}
             src='https://i.ibb.co.com/20ztH7f6/Teacher-rafiki-81362516.png'
             alt="Language Learning App"
-            className="max-w-[450px] h-[400px] rounded-xl mb-5"
+            className="max-w-[80%] h-[80%] rounded-xl mb-5 lg:mr-6 md:mr0"
           />
         </div>
       </div>
